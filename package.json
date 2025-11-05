@@ -1,5 +1,27 @@
 {
+  "name": "projeto_chat_nodejs_express",
+  "version": "1.0.0",
+  "description": "## Instalação das Dependências",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericsonnascimento/projeto_chat_nodejs_express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ericsonnascimento/projeto_chat_nodejs_express/issues"
+  },
+  "homepage": "https://github.com/ericsonnascimento/projeto_chat_nodejs_express#readme",
   "dependencies": {
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "typescript": "^5.9.3"
   }
 }
