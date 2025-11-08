@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    // Versão do JavaScript para a qual o código será compilado
+    "target": "ES2020",
+    
+    // Sistema de módulos: CommonJS (padrão Node.js)
+    "module": "commonjs",
+    
+    // Pasta de saída para os arquivos JavaScript compilados
+    "outDir": "./dist",
+    
+    // Pasta raiz dos arquivos TypeScript fonte
+    "rootDir": "./src",
+    
+    // Ativa todas as verificações rigorosas de tipo
+    "strict": true,
+    
+    // Habilita interoperabilidade entre módulos ES e CommonJS
+    "esModuleInterop": true,
+    
+    // Ignora verificações de tipos em arquivos de declaração (.d.ts)
+    "skipLibCheck": true,
+    
+    // Força nomes de arquivos com casing consistente em imports
+    "forceConsistentCasingInFileNames": true
+  },
+
+  // INCLUDE: Especifica quais pastas/arquivos o TypeScript deve compilar
+  // "src/**/*" = todos os arquivos dentro da pasta src e subpastas
+  "include": ["src/**/*"],
+  
+  // EXCLUDE: Evita que o TypeScript compile dependências e arquivos já compilados
+  // "node_modules" = bibliotecas de terceiros
+  // "dist" = arquivos JavaScript já compilados
+  "exclude": ["node_modules", "dist"]
+}

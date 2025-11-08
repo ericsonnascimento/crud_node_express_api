@@ -2,25 +2,78 @@
 
 ## Instalação das Dependências
 
-* Instalar o Node.js com npm  
-`npm install node` 
+* Iniciando o projeto:  
+`npm init -y`
 
-* Versionar as dependências com o package.json  
-`npm init -y` # a opção `-y` captura diversas informações do projeto
+* TypeScript como dependência de desenvolvimento:  
+`npm install typescript -D`
 
-* Instalar o Express, adicionando as dependências  
-`npm install express` 
+* Ferramenta para execução em desenvolvimento:   
+`npm install ts-node-dev -D`
 
-* Instalar as tipagens do express    
-`npm i --save-dev @types/express`
+* Express:  
+`npm install express`
 
-* Instalar o typescrpt -D ativa as dependencia de desenvolvimento  
-`npm install typescript -D`  
+* Tipagens do Express:  
+`npm install @types/express -D`
 
-* Criar o arquivo de configuração do typescript com o npx
+* Tipagens do Node (importante!):  
+`npm install @types/node -D`
+
+## Configurando o TypeScript
+
+* Criando o `tsconfig.json` na raiz do projeto:  
 `npx tsc --init`
 
-* Instalar uma especie de tradutor para sintax node/typescript
-`npx ts-node-dev -D`
+* Edite o `tsconfig.json` gerado:  
+```
+{
+  "compilerOptions": {
+    // Versão do JavaScript para a qual o código será compilado
+    "target": "ES2020",
+    
+    // Sistema de módulos: CommonJS (padrão Node.js)
+    "module": "commonjs",
+    
+    // Pasta de saída para os arquivos JavaScript compilados
+    "outDir": "./dist",
+    
+    // Pasta raiz dos arquivos TypeScript fonte
+    "rootDir": "./src",
+    
+    // Ativa todas as verificações rigorosas de tipo
+    "strict": true,
+    
+    // Habilita interoperabilidade entre módulos ES e CommonJS
+    "esModuleInterop": true,
+    
+    // Ignora verificações de tipos em arquivos de declaração (.d.ts)
+    "skipLibCheck": true,
+    
+    // Força nomes de arquivos com casing consistente em imports
+    "forceConsistentCasingInFileNames": true
+  },
 
+  // INCLUDE: Especifica quais pastas/arquivos o TypeScript deve compilar
+  // "src/**/*" = todos os arquivos dentro da pasta src e subpastas
+  "include": ["src/**/*"],
+  
+  // EXCLUDE: Evita que o TypeScript compile dependências e arquivos já compilados
+  // "node_modules" = bibliotecas de terceiros
+  // "dist" = arquivos JavaScript já compilados
+  "exclude": ["node_modules", "dist"]
+}
+```
+## Configurando o package.json
 
+* Na chave "scripts" adicione logo abaixo:
+```
+"dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+"build": "tsc",
+"start": "node dist/server.js"
+```
+
+## Rodando o projeto em modo desenvolvedor
+
+* Temos três comando disponíveis: *dev, build e start*  
+`npm run dev`

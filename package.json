@@ -1,10 +1,12 @@
 {
   "name": "projeto_chat_nodejs_express",
   "version": "1.0.0",
-  "description": "## Instalação das Dependências",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
   },
   "repository": {
     "type": "git",
@@ -17,11 +19,14 @@
     "url": "https://github.com/ericsonnascimento/projeto_chat_nodejs_express/issues"
   },
   "homepage": "https://github.com/ericsonnascimento/projeto_chat_nodejs_express#readme",
-  "dependencies": {
-    "express": "^5.1.0"
-  },
+  "description": "",
   "devDependencies": {
     "@types/express": "^5.0.5",
+    "@types/node": "^24.10.0",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
   }
 }
