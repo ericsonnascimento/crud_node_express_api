@@ -77,3 +77,6 @@
 
 * Temos três comando disponíveis: *dev, build e start*  
 `npm run dev`
+
+## Ferramenta de requisições para API
+* Insomnia
