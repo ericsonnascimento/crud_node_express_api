@@ -86,17 +86,20 @@
 `npm install typeorm reflect-metadata sqlite3`
 
 * Comando para migrations:  
-* Gerar migration
-`npm run typeorm migration:generate -- src/database/migrations/NomeMigration -d src/database/data-source.ts`
+* Gerar migration  
+`npm run migration:generate -- src/database/migrations/NomeMigration`
 
-* Executar migrations
-`npm run typeorm migration:run -- -d src/database/data-source.ts`
+* Executar migrations  
+`npm run migration:run`
 
-* Reverter migration
-`npm run typeorm migration:revert -- -d src/database/data-source.ts`
+* Reverter migration  
+`npm run migration:revert`
 
-* Criar migration manual
-`npm run typeorm migration:create -- src/database/migrations/NomeMigration`
+* Criar migration manual  
+`npm run migration:create -- src/database/migrations/NomeMigration`
+
+* Diagrama de Classes  
+![alt text](documents/diagrama_class.png)
 
 ## Tecnologias Utilizadas
 
